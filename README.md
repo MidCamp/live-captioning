@@ -19,7 +19,8 @@ Adjust the size of the text and colors via the CSS in `css/live-captioning.css` 
 * JavaScript enabled.
 
 ### How It Works
-It's quite simple! This is a single HTML file that uses CSS styling and JavaScript to convert speech-to-text using the Chrome browser. You can simply open the HTML on your local computer. Or, you can take the files and host them on your own site. To see this in action, go to: .....INSERT GITHUB PAGES LINK HERE ONCE LIVE....
+It's quite simple! This is a single HTML file that uses CSS styling and JavaScript to convert speech-to-text using the Chrome browser. You can simply open the HTML on your local computer. Or, you can take the files and host them on your own site. To see this in action, go to:
+https://midcamp.github.io/live-captioning/
 
 ## Known Issues
 The following are known issues:
@@ -27,8 +28,8 @@ The following are known issues:
 * **Timeout.** The connection may time out after an extended period of time. In our experience, the captioning stopped somewhere between 5-10 minutes. To fix, you can refresh your browser. When using Live Captioning at Meet Ups or Events, we assigned a person to the computer to monitor activity and refresh as necessary.
 
 * **Text extending off the page.** When a person speaks continuously without breaks, the text will continue to render off the page. This is due to the fixed positioning of the text within the page. To fix, you can either:
-** Refresh your browser.
-** Wait until the speaker has a natural break. Captioning will reset.
+  * Refresh your browser.
+  * Wait until the speaker has a natural break. Captioning will reset.
 
 * **Text not captured as a transcript or written to a file.** The text is NOT saved after it disappears from the screen.
 
@@ -58,7 +59,8 @@ This was developed to caption the Midwest Drupal Camp (MidCamp) in Chicago when 
 Live Captioning is our first open source project, and your suggestions and feedback are welcome. The project is in a pre-beta phase and is liable to change at any time.
 
 ## Credits
-This approach is based on the following CodePen created by Dave Rupert [@davatron5000](https://twitter.com/@davatron5000): https://codepen.io/davatron5000/pen/IKAxb
+This approach is based on the following CodePen created by Dave Rupert [@davatron5000](https://twitter.com/@davatron5000).
+https://codepen.io/davatron5000/pen/IKAxb
 
 Thanks to Fatima Sarah Khalid [@sugaroverflow](https://twitter.com/@sugaroverflow) for suggesting this CodePen and inspiring the first version tested at Midwest Drupal Camp (MidCamp) 2019 in Chicago, Illinois.
 
