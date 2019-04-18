@@ -33,14 +33,14 @@ The following are known issues:
 * **Text not captured as a transcript or written to a file.** The text is NOT saved after it disappears from the screen.
 
 * **Browser remembering microphone settings.** Chrome has the ability to remember that you allowed access to the microphone. Review this setting here:
-** Open Chrome.
-** Click on the Settings icon, located on the top right of your browser window and is represented by either three dots or three horizontal lines (known as the Hamburger Menu); this will open up a dropdown menu, and Settings will be located to the bottom of the screen.
-*** You can also type in chrome://settings/ into the address bar to locate the page
-*** Mac OS X users can also open the Settings page by choosing Chrome > Preferences or hit `⌘,` (Command key plus the comma key).
-** Under "Privacy and security," click "Content settings."
-** Click "Microphone."
-** Turn "Ask before accessing (recommended)" on or off.
-** Review the list of sites under "Block" or "Allow" to see if your site is being blocked.
+  * Open Chrome.
+  * Click on the Settings icon, located on the top right of your browser window and is represented by either three dots or three horizontal lines (known as the Hamburger Menu); this will open up a dropdown menu, and Settings will be located to the bottom of the screen.
+  * You can also type in chrome://settings/ into the address bar to locate the page
+  * Mac OS X users can also open the Settings page by choosing Chrome > Preferences or hit `⌘,` (Command key plus the comma key).
+  * Under "Privacy and security," click "Content settings."
+  * Click "Microphone."
+  * Turn "Ask before accessing (recommended)" on or off.
+  * Review the list of sites under "Block" or "Allow" to see if your site is being blocked.
 
 * **Host on site using SSL certificates.** In our experience, hosting the HTML/CSS/JS files on a site at a URL using HTTPS produces the best results to keep the website listed in the "Allow" section of Chrome settings. This stops Chrome from continuously asking for permission to use your microphone.
 
