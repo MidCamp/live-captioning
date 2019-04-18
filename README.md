@@ -20,7 +20,7 @@ Adjust the size of the text and colors via the CSS in `css/live-captioning.css` 
 
 ### How It Works
 It's quite simple! This is a single HTML file that uses CSS styling and JavaScript to convert speech-to-text using the Chrome browser. You can simply open the HTML on your local computer. Or, you can take the files and host them on your own site. To see this in action, go to:
-https://midcamp.github.io/live-captioning/
+https://lc.midcamp.org/
 
 ## Known Issues
 The following are known issues:
@@ -54,7 +54,7 @@ Chrome supports the Web Speech API, a mechanism for converting speech to text on
 Pull requests, issues, and good advice are all things that would make a difference to this project. You can contribute by telling us how useful Live Captioning is to you; please let us know on Twitter at [@andrewozone](https://twitter.com/@andrewozone) and [@qymanaonaquest](https://twitter.com/@qymanaonaquest). Any time generously donated to helping make this project better is gratefully accepted.
 
 ## About
-This was developed to caption the Midwest Drupal Camp (MidCamp) in Chicago when a hearing impaired individual asked about accessibility. According to him, this approach worked amazingly well. While it was not perfect, it was a game changer for him. Before, he would never go to camps. Now, he wants to go to all the camps. We are excited to share and continue to refine.
+This was developed to caption the Midwest Drupal Camp ([MidCamp](https://www.midcamp.org/)) in Chicago when a hearing impaired individual asked about accessibility. According to him, this approach worked amazingly well. While it was not perfect, it was a game changer for him. Before, he would never go to camps. Now, he wants to go to all the camps. We are excited to share and continue to refine.
 
 Live Captioning is our first open source project, and your suggestions and feedback are welcome. The project is in a pre-beta phase and is liable to change at any time.
 
