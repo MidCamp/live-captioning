@@ -1,0 +1,71 @@
+/* Layout styling */
+html,
+body {
+  height: 100%;
+  background: #f0f0f0;
+  color: #000000;
+  font-family: 'Ubuntu', sans-serif;
+  line-height: 1.5;
+  text-align: center;
+}
+body.lc-on {
+  background: #000000;
+}
+
+article {
+  position: fixed;
+  bottom: 1em;
+  margin: 0 auto;
+  width: 100%;
+  z-index: 1;
+}
+
+ol {
+    padding-left: 0;
+}
+
+li {
+  list-style-position: inside;
+}
+
+/* Live Caption Styling */
+#lc {
+  text-align: center;
+  width: 100%;
+  position: fixed;
+  top: 3em;
+  z-index: 10;
+}
+
+#lc span {
+  display: inline-block;
+  width: auto;
+  margin: 0 auto;
+  background: black;
+  color: #FFFFFF;
+  font-size: 3em;
+  font-family:monospace;
+  padding: 0.5em;
+  min-height: 1.5em;
+  line-height: 1.5em;
+}
+
+#lc button {
+  font-family:monospace;
+  appearance: none;
+  border: 0;
+  font-size: 1em;
+  background: transparent;
+  color: #FFFFFF;
+}
+
+#lc abbr {
+  background: white;
+  border-radius: 4px;
+  color: #000000;
+  font-weight: bold;
+  font-family: sans-serif;
+  font-size: 0.8em;
+  display: inline-block;
+  padding: 0 0.25em;
+}
