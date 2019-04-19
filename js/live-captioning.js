@@ -20,7 +20,7 @@ recognition.onend = function() {
 recognition.onresult = function(event) {
   for (var i = event.resultIndex; i < event.results.length; ++i) {
     if(event.results[i][0].confidence > 0.4) {
-      lc.innerHTML = capitalize(event.results[i][0].transcript);
+      lc.firstChild.data = capitalize(event.results[i][0].transcript);
     }
   }
 };
