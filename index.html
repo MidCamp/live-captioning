@@ -17,6 +17,22 @@
   <div id="lc">
     <span id="lc-button" ><button class="lc-button" onclick="toggleSpeechRecognition(event)"><abbr title="Live Captioning">LC</abbr> Click to Caption</button></span>
     <span id="lc-text" style="display: none;" onclick="toggleSpeechRecognition(event)" tabindex="0">Begin speaking. Click to stop.</span>
+    <div id="lc-refresh">
+          <button onclick="refresh(event)">Refresh</button>
+    </div>
+  </div>
+  <div id="lc-rec">
+    <select id="session-select"></select>
+    <span id="session-continue"><button onclick="continueSession(event)">Continue selected session</button></span>
+    <span id="session-view"><button onclick="viewSession('srt')">View selected session transcript</button></span>
+    <div id="lc-transcript">
+          <span id="session-view"><button onclick="viewSession('srt')">SRT</button></span>          
+          <span id="session-view"><button onclick="viewSession('text')">Text</button></span>
+          <textarea></textarea>
+    </div>
+    <div id="new-recording">
+          <button onclick="newSession(event)">Start new session recording</button>
+    </div>
   </div>
 
   <article>
