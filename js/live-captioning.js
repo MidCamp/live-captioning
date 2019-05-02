@@ -29,7 +29,7 @@ recognition.onstart = function() {
 
 recognition.onerror = function(event) {
   console.log("Recognition error: ", event.message ? event.message : event.error);
-  if (event.error == "no-speech"){
+  if ((event.error == "no-speech") || (event.error == "audio-capture") || (event.error == "network") || (event.error == "bad-grammar")){
     refresh();
   }
 };
