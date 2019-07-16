@@ -14,23 +14,43 @@
 </head>
 
 <body>
-  <div id="lc">
-    <span id="lc-button" ><button class="lc-button" onclick="toggleSpeechRecognition(event)"><abbr title="Live Captioning">LC</abbr> Click to Caption</button></span>
-    <span id="lc-text" style="display: none;" onclick="toggleSpeechRecognition(event)" tabindex="0">Begin speaking. Click to stop.</span>
-  </div>
+  <section id="lc-intro">
+    <details id="lc-instructions">
+      <summary>How To Use</summary>
+      <ol>
+        <li>Open this page in Chrome desktop (25+).</li>
+        <li>Click button to begin captioning.</li>
+        <li>Allow use of microphone.</li>
+        <li>Begin talking. May need to pause occasionaly.</li>
+        <li>Click text on screen to stop captioning.</li>
+      </ol>
+    </details>
+    <div id="lc">
+      <span id="lc-button" ><button class="lc-button" onclick="toggleSpeechRecognition(event)"><abbr title="Live Captioning">LC</abbr> Click to Caption</button></span>
+      <span id="lc-text" style="display: none;" onclick="toggleSpeechRecognition(event)" tabindex="0">Begin speaking. Click to stop.</span>
+      <div id="lc-refresh">
+            <button class="lc-btn" onclick="refresh(event)">Refresh</button>
+      </div>
+    </div>
+    <div id="lc-rec">
+      <div id="new-recording">
+            <button class="lc-btn lc-btn-wide" onclick="newSession(event)">Start new session recording</button>
+      </div>
+    </div>
+  </section>
+  <section id="lc-sessions">
+    <select id="session-select"></select>
+    <div id="session-continue"><button class="lc-btn lc-btn-wide" onclick="continueSession(event)">Continue selected session</button></div>
+    <div id="session-view"><button class="lc-btn lc-btn-wide" onclick="viewSession()">View selected session transcript</button></div>
+    <div id="lc-transcript">
+          <div><textarea></textarea><div>
+          <div id="lc-session-types">
+            <span id="session-view"><button class="lc-btn" onclick="viewSession('srt')">SRT</button></span>          
+            <span id="session-view"><button class="lc-btn" onclick="viewSession('text')">Text</button></span>
+          </div>
+    </div>
 
-  <article>
-    <h1>HTML5 Live Captioning</h1>
-    
-    <ol>
-      <li>Open this page in Chrome desktop (25+).</li>
-      <li>Click button to begin captioning.</li>
-      <li>Allow use of microphone.</li>
-      <li>Begin talking. May need to pause occasionaly.</li>
-      <li>Click text on screen to stop captioning.</li>
-    </ol>
-  </article>
-
+  </section>
   <script src="js/jquery.min.js"></script>
   <script src="js/live-captioning.js"></script>
 
