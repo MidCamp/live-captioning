@@ -2,7 +2,7 @@
 html,
 body {
   height: 100%;
-  background: #f0f0f0;
+  background-color: #C0C0C0;
   color: #000000;
   font-family: 'Ubuntu', sans-serif;
   line-height: 1.5;
@@ -10,14 +10,6 @@ body {
 }
 body.lc-on {
   background: #000000;
-}
-
-article {
-  position: fixed;
-  bottom: 1em;
-  margin: 0 auto;
-  width: 100%;
-  z-index: 1;
 }
 
 ol {
@@ -29,11 +21,20 @@ li {
 }
 
 /* Live Caption Styling */
+#lc-intro {
+    background-color: #F0F0F0;
+    padding-bottom: 2em;
+}
+
+#lc-instructions {
+  padding-top: 1em;
+  margin-bottom: 3em;
+}
+
 #lc {
   text-align: center;
   width: 100%;
-  position: fixed;
-  top: 3em;
+  position: relative;
   z-index: 10;
 }
 
@@ -50,7 +51,7 @@ li {
   line-height: 1.5em;
 }
 
-#lc .lc-button {
+#lc .lc-.lc-btn {
   font-family:monospace;
   appearance: none;
   border: 0;
@@ -71,15 +72,26 @@ li {
 }
 
 #lc-rec {
+  margin: auto;
+  max-width: 300px;
   text-align: center;
+  margin-top: 2em;
+  position: relative;
   width: 100%;
-  position: fixed;
-  top: 12em;
   z-index: 10;
 }
 
-.lc-on #lc-rec {
+#lc-rec .lc-btn {
+  width: 100%;
+}
+
+.lc-on #lc-rec,
+.lc-on #lc-instructions,
+.lc-on #lc-sessions {
   display: none;
+}
+.lc-on #lc-intro {
+  background-color: transparent;
 }
 
 #lc-refresh {
@@ -92,12 +104,63 @@ li {
 
 #lc-transcript {
   display: none;
+  margin: auto;
+  width: 60%;
 }
 
 #lc-transcript textarea {
   resize: both;
-  width: 60%;
+  width: 100%;
   height: 300px;
 }
 
+.lc-btn {
+  -moz-box-shadow:inset 0px 1px 3px 0px #d9d9d9;
+  -webkit-box-shadow:inset 0px 1px 3px 0px #d9d9d9;
+  box-shadow:inset 0px 1px 3px 0px #d9d9d9;
+  background-color: #595959;
+  -moz-border-radius:5px;
+  -webkit-border-radius:5px;
+  border-radius:5px;
+  border:1px solid #696969;
+  display:inline-block;
+  cursor:pointer;
+  color:#ffffff;
+  font-family:Arial;
+  font-size:15px;
+  font-weight:bold;
+  padding:11px 23px;
+  margin-bottom: 10px;
+  text-decoration:none;
+  text-shadow:0px -1px 0px #666666;
+}
+.lc-btn:focus {
+  background-color:#2e2e2e;
+}
+.lc-btn:hover {
+  background-color:#2e2e2e;
+}
+.lc-btn:active {
+  position:relative;
+  top:1px;
+}
+
+.lc-btn.lc-btn-wide {
+  width: 300px;
+}
+
+#lc-sessions {  
+  margin-bottom: 2em;
+  margin-top: 2em;
+}
+
+#lc-session-types { 
+  text-align: right;
+}
+
+select {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 15px;
+    width: 300px;
 }

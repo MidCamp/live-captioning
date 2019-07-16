@@ -161,15 +161,19 @@ function viewSession(format) {
   var select = document.getElementById('session-select');
   var textArea = $('#lc-transcript textarea')[0];
   switch(format){
-    case "srt":
-      textArea.value = formatTranscriptSRT(loadFromLocalStorage(sessions[select.value].name), sessions[select.value].startTime);
-      break;
     case "text":
-    default:
       textArea.value = formatTranscriptText(loadFromLocalStorage(sessions[select.value].name));
       break;
+    case "srt":
+    default:
+      textArea.value = formatTranscriptSRT(loadFromLocalStorage(sessions[select.value].name), sessions[select.value].startTime);
+      break;
   }
-  $('#lc-transcript').show();
+  if (format){
+    $('#lc-transcript').show();    
+  } else {
+    $('#lc-transcript').toggle();
+  }
 }
 
 function findSessionFromHash() {
