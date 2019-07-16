@@ -164,3 +164,10 @@ select {
     margin-bottom: 15px;
     width: 300px;
 }
+
+#lc-refresh {
+  position: fixed;
+  bottom: 1rem;
+  left: 0;
+  right: 0;
+}
