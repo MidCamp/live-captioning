@@ -22,16 +22,17 @@ Adjust the size of the text and colors via the CSS in `css/live-captioning.css` 
 It's quite simple! This is a single HTML file that uses CSS styling and JavaScript to convert speech-to-text using the Chrome browser. You can simply open the HTML on your local computer. Or, you can take the files and host them on your own site. To see this in action, go to:
 https://lc.midcamp.org/
 
+Text is captured and written as a transcript to your browser. You can view as either plain text or SRT format (start and end timecodes). Take this text and upload as subtitles / closed captions to YouTube.
+
 ## Known Issues
 The following are known issues:
 
-* **Timeout.** The connection may time out after an extended period of time. In our experience, the captioning stopped somewhere between 5-10 minutes. To fix, you can refresh your browser. When using Live Captioning at Meet Ups or Events, we assigned a person to the computer to monitor activity and refresh as necessary.
+* **Timeout.** The connection may time out after an extended period of time. In our experience, the captioning stopped somewhere between 5-10 minutes. To fix, you can press the "Reconnect" button at the bottom of the page. Your second option is to refresh your browser. When using Live Captioning at Meet Ups or Events, we assigned a person to the computer to monitor activity and refresh the connection as necessary.
 
 * **Text extending off the page.** When a person speaks continuously without breaks, the text will continue to render off the page. This is due to the fixed positioning of the text within the page. To fix, you can either:
+  * Press the "Reconnect" button at the bottom of the page.
   * Refresh your browser.
   * Wait until the speaker has a natural break. Captioning will reset.
-
-* **Text not captured as a transcript or written to a file.** The text is NOT saved after it disappears from the screen.
 
 * **Browser remembering microphone settings.** Chrome has the ability to remember that you allowed access to the microphone. Review this setting here:
   * Open Chrome.
