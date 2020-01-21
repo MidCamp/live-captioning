@@ -87,7 +87,8 @@ li {
 
 .lc-on #lc-rec,
 .lc-on #lc-instructions,
-.lc-on #lc-sessions {
+.lc-on #lc-sessions,
+.lc-on footer {
   display: none;
 }
 .lc-on #lc-intro {
@@ -158,6 +159,9 @@ li {
   text-align: right;
 }
 
+#lc-sessions label {
+  margin-right: .5em;
+}
 select {
     position: relative;
     display: inline-block;
@@ -167,7 +171,13 @@ select {
 
 #lc-refresh {
   position: fixed;
-  bottom: 1rem;
+  bottom: 1em;
   left: 0;
   right: 0;
+}
+footer {
+  margin-bottom: 1em;
+}
+footer a {
+  color: #000000;
 }

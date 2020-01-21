@@ -18,8 +18,8 @@
     <details id="lc-instructions">
       <summary>How To Use</summary>
       <ol>
-        <li>Open this page in Chrome desktop (25+).</li>
-        <li>Click button to begin captioning.</li>
+        <li>Open this page in Chrome desktop browser (version 25+).</li>
+        <li>Click button "Click to Caption" to begin captioning.</li>
         <li>Allow use of microphone.</li>
         <li>Begin talking. May need to pause occasionaly.</li>
         <li>Click text on screen to stop captioning.</li>
@@ -39,7 +39,7 @@
     </div>
   </section>
   <section id="lc-sessions">
-    <select id="session-select"></select>
+    <label for="session-select">Choose a Session</label><select id="session-select"></select>
     <div id="session-continue"><button class="lc-btn lc-btn-wide" onclick="continueSession(event)">Continue selected session</button></div>
     <div id="session-view"><button class="lc-btn lc-btn-wide" onclick="viewSession()">View selected session transcript</button></div>
     <div id="lc-transcript">
@@ -51,6 +51,9 @@
     </div>
 
   </section>
+  <footer>
+    <a href="https://opencollective.com/live-captioning-initiative">Donate to the Live Captioning Initiative on Open Collective</a>
+  </footer>
   <script src="js/jquery.min.js"></script>
   <script src="js/live-captioning.js"></script>
 
