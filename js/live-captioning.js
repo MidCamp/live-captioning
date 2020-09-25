@@ -165,8 +165,9 @@ function viewSession(format) {
       textArea.value = formatTranscriptText(loadFromLocalStorage(sessions[select.value].name));
       break;
     case "srt":
+    case "webVTT":
     default:
-      textArea.value = formatTranscriptSRT(loadFromLocalStorage(sessions[select.value].name), sessions[select.value].startTime);
+      textArea.value = formatTranscriptTimeStamped(loadFromLocalStorage(sessions[select.value].name), sessions[select.value].startTime, format);
       break;
   }
   if (format){
@@ -231,12 +232,13 @@ function addToTranscript(sessionName, text){
 }
 
 /**
- * Format a time string into  array into an "SRT" format
+ * Format a time string into  array into an "SRT" or "WebVTT" format
  *
  * @param timeString -- Date/Time string 
  * @param startTime  -- Date/Time string of the start used to calculate the elapsed time
+ * @param format -- Style of output to be generated (currently SRT or WebVTT)
  */
-function formatElapsedTime(timeString, startTimeString){
+function formatElapsedTime(timeString, startTimeString, format){
   var time = new Date(timeString);
   var startTime = new Date(startTimeString);
 
@@ -247,22 +249,34 @@ function formatElapsedTime(timeString, startTimeString){
   var minutes = Math.floor(seconds/60);
   var hours = Math.floor(minutes/60);
   var days = Math.floor(hours/24);
+  var millisecondsSeparator = ".";
 
   hours = hours-(days*24);
   minutes = minutes-(days*24*60)-(hours*60);
   seconds = seconds-(days*24*60*60)-(hours*60*60)-(minutes*60);
-  return ((hours < 10) ? '0' : '') + hours + ((minutes < 10) ? ':0' : ':') + minutes  + ((seconds < 10) ? ':0' : ':') + seconds + "," + milliseconds;
+
+  if (format === "srt") {
+    millisecondsSeparator = ",";
+  }
+  return ((hours < 10) ? '0' : '') + hours + 
+          ((minutes < 10) ? ':0' : ':') + minutes  + 
+          ((seconds < 10) ? ':0' : ':') + seconds + 
+          millisecondsSeparator + milliseconds;
 }
 
 /**
- * Format the transcript array into an "SRT" format
+ * Format the transcript array into a timestamped output format
+ * such as SRT or WebVTT.
  *
  */
-function formatTranscriptSRT(transcript, startTime){
+function formatTranscriptTimeStamped(transcript, startTime, format){
   var output = "";
+  if (format === "webVTT") {
+    output += "WEBVTT\n\n";
+  }
   for (var i = 0; i < transcript.length; ++i) {
     output += i+1 + "\n";
-    output += formatElapsedTime(transcript[i].startTime, startTime) + " --> " + formatElapsedTime(transcript[i].endTime, startTime) + "\n";
+    output += formatElapsedTime(transcript[i].startTime, startTime) + " --> " + formatElapsedTime(transcript[i].endTime, startTime, format) + "\n";
     output += transcript[i].text + "\n\n";
   }
   return output;
