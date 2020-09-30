@@ -276,7 +276,7 @@ function formatTranscriptTimeStamped(transcript, startTime, format){
   }
   for (var i = 0; i < transcript.length; ++i) {
     output += i+1 + "\n";
-    output += formatElapsedTime(transcript[i].startTime, startTime) + " --> " + formatElapsedTime(transcript[i].endTime, startTime, format) + "\n";
+    output += formatElapsedTime(transcript[i].startTime, startTime, format) + " --> " + formatElapsedTime(transcript[i].endTime, startTime, format) + "\n";
     output += transcript[i].text + "\n\n";
   }
   return output;
