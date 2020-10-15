@@ -261,7 +261,7 @@ function formatElapsedTime(timeString, startTimeString, format){
   return ((hours < 10) ? '0' : '') + hours + 
           ((minutes < 10) ? ':0' : ':') + minutes  + 
           ((seconds < 10) ? ':0' : ':') + seconds + 
-          millisecondsSeparator + milliseconds;
+          millisecondsSeparator + String(milliseconds).padStart(3,'0');
 }
 
 /**
