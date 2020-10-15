@@ -12,7 +12,7 @@
 ## View Transcript of Captioning Session
 1. Use the drop-down list to select your session. Click the button `View selected session transcript`.
 1. Upon clicking this button, the transcript from your captioning session displays below.
-1. Select either `SRT` or `Text` format buttons. `SRT` format contains start and end timecodes. `Text` is only plain text.
+1. Select either `SRT` `WebVTT` or `Text` format buttons. `SRT` and `WebVTT` formats contain start and end timecodes. `Text` is only plain text.
 1. Click `Continue selected session` to resume captioning for this selected session.
 1. Refresh browser to view the button `Start new session recording`. Click this button to start a new session. The new session name increments by a value of one _(e.g. `session_1`, `session_2`, `session_3`)_.
 1. **Note for Incognito Browsing:** Session transcripts will be destroyed once you close the browser! Save all transcripts prior to closing your incognito browser window.
@@ -23,7 +23,7 @@
 * JavaScript enabled.
 
 ### How Live Captioning Works
-It's quite simple! This is a single HTML file that uses CSS styling and JavaScript to convert speech-to-text using the Chrome browser. All the text you see on the screen is captured and written as a transcript to your browser. You can view the transcript as either plain text or SRT format (start and end timecodes). Take the transcript and reach an even wider audience once the event is over by providing transcripts for videos and SEO (Search Engine Optimization) value for event sites.
+It's quite simple! This is a single HTML file that uses CSS styling and JavaScript to convert speech-to-text using the Chrome browser. All the text you see on the screen is captured and written as a transcript to your browser. You can view the transcript as either plain text, SRT, or WebVTT format (start and end timecodes). Take the transcript and reach an even wider audience once the event is over by providing transcripts for videos and SEO (Search Engine Optimization) value for event sites.
 
 To see this in action, simply go to https://lc.midcamp.org/
 Alternatively, you can download this repo and open the HTML on your local computer. You can also host these files on your own site.
