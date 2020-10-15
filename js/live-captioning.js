@@ -170,7 +170,7 @@ function viewSession(format) {
       break;
   }
   if (format){
-    $('#lc-transcript').show();    
+    $('#lc-transcript').show();
   } else {
     $('#lc-transcript').toggle();
   }
