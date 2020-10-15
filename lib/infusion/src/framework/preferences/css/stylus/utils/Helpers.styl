@@ -1,0 +1,43 @@
+// Basic stylus functions used by other stylus files
+
+vendors = webkit moz o ms
+
+linear-gradient() {
+    // Generate the gradient effect used by linear-gradient()
+    content = arguments[0];
+    count = 0;
+    for element in arguments {
+        if (count != 0) {
+            content = content, element;
+        }
+        count = count + 1;
+    }
+
+    if current-property {
+        for vendor in vendors {
+            add-property(current-property[0], s('-%s-linear-gradient(%s)', vendor, content));
+        }
+
+        s('linear-gradient(%s)', content);
+    }
+}
+
+
+// Mixin for common styles of the "thumb" (slider control)
+// used by both the jQuery and native HTML sliders
+slider-thumb-common() {
+    height: 1.5em;
+    width: 1.5em;
+    background-color: #fff;
+    border: 1px solid #b3b3b3;
+    border-radius: 2em;
+    box-shadow: 4px 2px 3px rgba(0,0,0,0.3);
+    background-image: linear-gradient(right top, #fff 46%, #e9eaea 73%);
+}
+
+// Mixin for common styles of the "track" on the native HTML sliders
+
+slider-native-track-common() {
+    background: transparent;
+    border: 0px;
+}

@@ -95,6 +95,17 @@ li {
   background-color: transparent;
 }
 
+.fl-panelBar {
+  display: none;
+}
+
+.lc-on .fl-panelBar {
+  display: block;
+  position: relative;
+  visibility: visible;
+  z-index: 11;
+}
+
 #lc-refresh {
   display: none;
 }
