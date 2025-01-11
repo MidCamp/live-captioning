@@ -3,7 +3,7 @@
 ## Getting Started
 
 1. [Visit the Live Captioning site](https://lc.midcamp.org/) using a Chrome browser desktop (version 25+). _Alternatively, you may clone this repo or download as a ZIP to your local computer and open `index.html`._
-1. Click the button `Click to Caption` to begin captioning.
+1. Click the button `Click to Caption` to begin captioning. Default language is English (US). Additional languages can be selected via the dropdown.
 1. Allow use of your microphone when [prompted by the browser](images/chrome-microphone-prompt.png).
 1. Begin talking. You may need to pause occasionally. Captioning will detect natural breaks and refresh the text on the screen.
 1. All text displayed on the screen is saved. A transcript is available to view after the captioning session.
@@ -21,6 +21,9 @@
 * Chrome desktop (version 25+).
 * Connection to the Internet.
 * JavaScript enabled.
+
+### Languages
+List of languages available in the dropdown menu was taken from this list of [Google Language Codes](https://developers.google.com/admin-sdk/directory/v1/languages). If there is a language missing that you would like added, please contact us or [create an issue](https://github.com/MidCamp/live-captioning/issues) and we will review if the language is available.
 
 ### How Live Captioning Works
 It's quite simple! This is a single HTML file that uses CSS styling and JavaScript to convert speech-to-text using the Chrome browser. All the text you see on the screen is captured and written as a transcript to your browser. You can view the transcript as either plain text, SRT, or WebVTT format (start and end timecodes). Take the transcript and reach an even wider audience once the event is over by providing transcripts for videos and SEO (Search Engine Optimization) value for event sites.
@@ -95,7 +98,7 @@ _Example diagram of an event using Live Captioning. Use the letters in the diagr
 ## Known Issues
 The following are known issues:
 
-* **Timeout.** The connection may time out after an extended period of time or if the audio signal is not strong and consistent. In our experience, captioning works best when the microphone has a strong input signal. To fix, you can press the `Reconnect` button at the bottom of the page. Your second option is to refresh your browser. When using Live Captioning at Meet-Ups or Events, we assigned a volunteer to the computer to monitor activity and refresh the connection as necessary.
+* **Timeout.** The connection may time out after an extended period of time or if the audio signal is not strong and consistent. In our experience, captioning works best when the microphone has a strong input signal. To fix, you can press the `Reconnect` button at the bottom of the page. Your second option is to refresh your browser. In our experience using Live Captioning at Meet-Ups or Events, we assigned a volunteer to the computer to monitor activity and refresh the connection as necessary.
 
 * **Text extending off the page.** When a person speaks continuously without breaks, the text will continue to render off the page. This is due to the fixed positioning of the text within the page. To fix, you can either:
   * Press the `Reconnect` button at the bottom of the page.
@@ -116,12 +119,16 @@ The following are known issues:
 * **Host on a site using SSL certificates.** In our experience, hosting the HTML/CSS/JS files on a site at a URL using HTTPS produces the best results to keep the website listed in the "Allow" section of Chrome settings. This stops Chrome from continuously asking for [permission to use your microphone](images/chrome-microphone-prompt.png).
 
 ## Additional Information
-Chrome supports the Web Speech API, a mechanism for converting speech to text on a web page. It uses Google's servers to perform the conversion. Using the feature sends an audio recording to Google (audio data is not sent directly to the page itself), along with the domain of the website using the API, your default browser language and the language settings of the website. Cookies are not sent along with these requests. More information can be found here:
+Chrome utilizes the Web Speech API, a standard feature in modern browsers, to access your microphone and process speech input. When you use Chrome's speech-to-text feature, your spoken words are captured by your microphone, then sent to Google's servers where a complex machine learning model analyzes the audio, breaks it down into phonemes (basic sound units), compares those sounds to a vast database of language patterns, and translates them into text that appears on your screen; essentially, it uses advanced algorithms to recognize speech patterns and convert them into written words in real-time, with the ability to adapt to different accents and dialects based on the language selected. 
+
+Google states that they do not collect personal data when using speech-to-text unless you specifically choose to opt-in to data logging, which allows them to use your audio to improve the service. *The Live Captioning Tool does not opt-in to data logging with Google nor does it store any audio files.* In addition, Google captures the domain of the website using the API, your default browser language and the language settings of the website. Cookies are not sent along with these requests.
+
+More information can be found here:
 * https://developers.google.com/web/updates/2013/01/Voice-Driven-Web-Apps-Introduction-to-the-Web-Speech-API
-* https://wicg.github.io/speech-api/
+* https://webaudio.github.io/web-speech-api/
 
 ## Contributing
-Pull requests, issues, and good advice are all things that would make a difference to this project. You can contribute by telling us how useful Live Captioning is to you; please let us know on Twitter at [@andrewozone](https://twitter.com/@andrewozone) and [@qymanaonaquest](https://twitter.com/@qymanaonaquest). Any time generously donated to help make this project better is gratefully accepted.
+Pull requests, issues, and good advice are all things that would make a difference to this project. You can contribute by telling us how useful Live Captioning is to you; please let us know on LinkedIn at [Andrew Olson](https://www.linkedin.com/in/andrewozone/) and [Qymana Botts](https://www.linkedin.com/in/qbotts/). Any time generously donated to help make this project better is gratefully accepted.
 
 Donations are gratefully accepted on [Open Collective as the Live Captioning Initiative](https://opencollective.com/live-captioning-initiative).
 
