@@ -15,6 +15,12 @@ var autoRestart = false;
 recognition.continuous = true;
 recognition.interimResults = true;
 
+var languageSelector = document.getElementById('language-selector');
+
+languageSelector.addEventListener('change', function() {
+  recognition.lang = languageSelector.value;
+});
+
 if (! sessions){
   sessions = [];
   $('#lc-rec').hide();

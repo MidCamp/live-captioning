@@ -88,7 +88,8 @@ li {
 .lc-on #lc-rec,
 .lc-on #lc-instructions,
 .lc-on #lc-sessions,
-.lc-on footer {
+.lc-on footer,
+.lc-on #lc-language-selector {
   display: none;
 }
 .lc-on #lc-intro {
@@ -159,7 +160,7 @@ li {
   text-align: right;
 }
 
-#lc-sessions label {
+#lc-language-selector label, #lc-sessions label {
   margin-right: .5em;
 }
 select {
@@ -180,4 +181,8 @@ footer {
 }
 footer a {
   color: #000000;
+}
+
+#lc-language-selector {
+  margin-top: 1em;
 }
