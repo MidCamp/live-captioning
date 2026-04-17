@@ -130,8 +130,6 @@ More information can be found here:
 ## Contributing
 Pull requests, issues, and good advice are all things that would make a difference to this project. You can contribute by telling us how useful Live Captioning is to you; please let us know on LinkedIn at [Andrew Olson](https://www.linkedin.com/in/andrewozone/) and [Qymana Botts](https://www.linkedin.com/in/qbotts/). Any time generously donated to help make this project better is gratefully accepted.
 
-Donations are gratefully accepted on [Open Collective as the Live Captioning Initiative](https://opencollective.com/live-captioning-initiative).
-
 ## About
 This tool was developed to caption the Midwest Drupal Camp ([MidCamp](https://www.midcamp.org/)) in Chicago when a hearing impaired individual asked about accessibility. According to him, this approach worked amazingly well. While it was not perfect, it was a game-changer for him. Before, he would never go to camps. Now, he wants to go to all the camps. We are excited to share and continue to refine.
 
