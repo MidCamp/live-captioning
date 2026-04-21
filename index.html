@@ -100,18 +100,19 @@
     </div>
   </section>
   <section id="lc-sessions">
-    <label for="session-select">Choose a Session</label><select id="session-select"></select>
-    <div id="session-continue"><button class="lc-btn lc-btn-wide" onclick="continueSession(event)">Continue selected session</button></div>
-    <div id="session-view"><button class="lc-btn lc-btn-wide" onclick="viewSession()">View selected session transcript</button></div>
-    <div id="lc-transcript">
-          <div><textarea></textarea><div>
-          <div id="lc-session-types">
-            <span id="session-view"><button class="lc-btn" onclick="viewSession('srt')">SRT</button></span>          
-            <span id="session-view"><button class="lc-btn" onclick="viewSession('webVTT')">WebVTT</button></span>
-            <span id="session-view"><button class="lc-btn" onclick="viewSession('text')">Text</button></span>
-          </div>
+    <div id="session-list"></div>
+    <div id="session-actions">
+      <button class="lc-btn lc-btn-wide" onclick="continueSession(event)">Continue selected session</button>
+      <button class="lc-btn lc-btn-wide" onclick="viewSession()">View selected session transcript</button>
     </div>
-
+    <div id="lc-transcript">
+      <div><textarea></textarea></div>
+      <div id="lc-session-types">
+        <button class="lc-btn" onclick="viewSession('srt')">SRT</button>
+        <button class="lc-btn" onclick="viewSession('webVTT')">WebVTT</button>
+        <button class="lc-btn" onclick="viewSession('text')">Text</button>
+      </div>
+    </div>
   </section>
   <footer>
     <a href="https://github.com/MidCamp/live-captioning?tab=readme-ov-file#live-captioning">View this project on Github</a>

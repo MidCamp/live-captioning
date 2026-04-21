@@ -3,6 +3,7 @@ var lc = document.getElementById('lc-text');
 var button = document.getElementById('lc-button');
 
 var recognizing = false;
+var selectedSession = null;
 
 var recognition = new webkitSpeechRecognition();
 var sessions = loadFromLocalStorage('sessions');
@@ -24,6 +25,7 @@ languageSelector.addEventListener('change', function() {
 if (! sessions){
   sessions = [];
   $('#lc-rec').hide();
+  $('#lc-sessions').hide();
 } else {
   showRecordings();
 }
@@ -73,6 +75,7 @@ function toggleSpeechRecognition(event) {
     lc.firstChild.data = "Begin speaking. Click to stop.";
     button.style.display = "inline-block";    
     $('body').removeClass('lc-on');
+    selectedSession = currentSession;
     showRecordings();
     return;
   } else {
@@ -133,47 +136,84 @@ function locationHashChanged() {
 }
 
 
-function showRecordings (){
-  // Populate and show recordings section - maybe only if they're on a page with a hash tag
-  
-  var select = document.getElementById('session-select');
-  
-  // Clear any existing options, since we're refreshing after recording
-  for(i = select.options.length - 1 ; i >= 0 ; i--){
-    select.remove(i);
+function showRecordings() {
+  $('#lc-sessions').show();
+  $('#lc-rec').show();
+  var list = document.getElementById('session-list');
+  list.innerHTML = '';
+
+  for (var i = 0; i < sessions.length; i++) {
+    var session = sessions[i];
+    var date = new Date(session.startTime);
+    var dateStr = date.toLocaleDateString([], {year: 'numeric', month: 'short', day: 'numeric'}) +
+                  ' ' + date.toLocaleTimeString([], {hour: '2-digit', minute: '2-digit'});
+
+    var item = document.createElement('div');
+    item.className = 'session-item' + (selectedSession === i ? ' selected' : '');
+    item.setAttribute('data-index', i);
+    item.innerHTML =
+      '<div class="session-info" onclick="selectSession(' + i + ')">' +
+        '<span class="session-name">' + session.name + '</span>' +
+        '<span class="session-date">' + dateStr + '</span>' +
+      '</div>' +
+      '<button class="lc-btn session-delete-btn" onclick="deleteSession(event, ' + i + ')">Delete</button>';
+
+    list.appendChild(item);
   }
-  
-  for(index in sessions) {
-      select.options[select.options.length] = new Option(sessions[index].name, index);
+
+  if (selectedSession === null && sessions.length > 0) {
+    var initialIndex = window.location.hash ? findSessionFromHash() : null;
+    selectSession(initialIndex !== null ? initialIndex : 0);
   }
-  if (window.location.hash){
-    var selectValue = findSessionFromHash();
-    if (selectValue){
-      select.value = selectValue;
+}
+
+function selectSession(index) {
+  selectedSession = index;
+  var items = document.querySelectorAll('.session-item');
+  for (var i = 0; i < items.length; i++) {
+    var itemIndex = parseInt(items[i].getAttribute('data-index'));
+    items[i].classList.toggle('selected', itemIndex === index);
+  }
+}
+
+function deleteSession(event, index) {
+  event.stopPropagation();
+  localStorage.removeItem(sessions[index].name);
+  sessions.splice(index, 1);
+  saveToLocalStorage('sessions', sessions);
+
+  if (sessions.length === 0) {
+    selectedSession = null;
+    $('#lc-sessions').hide();
+    $('#lc-rec').hide();
+  } else {
+    if (selectedSession > index) {
+      selectedSession--;
+    } else if (selectedSession >= sessions.length) {
+      selectedSession = sessions.length - 1;
     }
+    showRecordings();
   }
-
-
-  select.style = "";
 }
 
 function continueSession(event){
-  var select = document.getElementById('session-select');
-  currentSession = select.value;
+  if (selectedSession === null) return;
+  currentSession = selectedSession;
   toggleSpeechRecognition(event);
 }
 
 function viewSession(format) {
-  var select = document.getElementById('session-select');
+  if (selectedSession === null) return;
+  var session = sessions[selectedSession];
   var textArea = $('#lc-transcript textarea')[0];
   switch(format){
     case "text":
-      textArea.value = formatTranscriptText(loadFromLocalStorage(sessions[select.value].name));
+      textArea.value = formatTranscriptText(loadFromLocalStorage(session.name));
       break;
     case "srt":
     case "webVTT":
     default:
-      textArea.value = formatTranscriptTimeStamped(loadFromLocalStorage(sessions[select.value].name), sessions[select.value].startTime, format);
+      textArea.value = formatTranscriptTimeStamped(loadFromLocalStorage(session.name), session.startTime, format);
       break;
   }
   if (format){

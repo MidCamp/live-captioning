@@ -151,12 +151,81 @@ li {
   width: 300px;
 }
 
-#lc-sessions {  
+#lc-sessions {
   margin-bottom: 2em;
   margin-top: 2em;
 }
 
-#lc-session-types { 
+#session-list {
+  max-width: 500px;
+  margin: 0 auto 1em;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  overflow: hidden;
+  text-align: left;
+}
+
+.session-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.65em 1em;
+  border-bottom: 1px solid #ddd;
+  background: #f9f9f9;
+  cursor: pointer;
+}
+
+.session-item:last-child {
+  border-bottom: none;
+}
+
+.session-item:hover {
+  background: #e8e8e8;
+}
+
+.session-item.selected {
+  background: #595959;
+  color: #fff;
+}
+
+.session-info {
+  flex: 1;
+}
+
+.session-name {
+  font-weight: bold;
+  display: block;
+}
+
+.session-date {
+  font-size: 0.82em;
+  color: #777;
+}
+
+.session-item.selected .session-date {
+  color: #ccc;
+}
+
+.session-delete-btn {
+  padding: 5px 10px;
+  font-size: 12px;
+  margin-bottom: 0;
+  background: #8b0000;
+  border-color: #6b0000;
+  text-shadow: none;
+  flex-shrink: 0;
+}
+
+.session-delete-btn:hover,
+.session-delete-btn:focus {
+  background: #6b0000;
+}
+
+#session-actions {
+  margin-bottom: 1em;
+}
+
+#lc-session-types {
   text-align: right;
 }
 
